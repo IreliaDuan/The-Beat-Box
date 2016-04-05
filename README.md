@@ -5,7 +5,6 @@ Arduino Project
 my coding
 ------------------------------
 int sensorPin = A0; 
-
 int ledPin = 11;
 
 int sensorValue = 0;
