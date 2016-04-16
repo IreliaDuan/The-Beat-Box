@@ -25,7 +25,7 @@ Please See Fritzing Diagram in my PDF
 https://www.youtube.com/watch?v=KDY_VmAbNpA
 
 #Coding
-【Original authors:Haohua Zhang】
+【Original authors:Haohua Zhang】 
 
 【Addition & revision: Irelia Duan】  
 
@@ -37,6 +37,82 @@ int balance = 0;
 int countZero = 0;  
 int holding = 0;   
 int delayTime = 50; 
+
+void setup () 
+
+{
+
+  pinMode (ledPin, OUTPUT);
   
+  Serial.begin (9600);
+  
+}
+
+ 
+ 
+void loop (){
+
+  ReadVolume();
+  
+  ShowLED();
+  
+  
+  
+  Serial.println (balance, DEC);
+  
+  delay(delayTime);
+  
+}
+
+
+
+void ShowLED(){
+
+  int ld = balance / 4;
+  
+  ld = 255 - ld * 200;
+  
+  ld = ld < 0 ? 0 : ld;
+  
+  analogWrite(ledPin, ld);
+  
+}
+
+
+
+void ReadVolume(){ 
+
+  sensorValue = analogRead (sensorPin);
+  
+  if(sensorValue == 0){
+  
+    countZero++;
+    
+    if(countZero >= (holding * 400 / delayTime)){
+    
+      balance = 0;
+      
+    }
+    
+  }else{
+  
+    countZero = 0;
+    
+    if(balance == 0){
+    
+      balance = sensorValue;
+      
+    }else{
+    
+      balance = (balance * 2 + sensorValue) / 3;
+      
+    }
+    
+  }
+  
+}
+
+
+
 
   
