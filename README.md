@@ -21,3 +21,5 @@ Please See Fritzing Diagram in my PDF
 - analog sound sensor connect to breadboard & A0 on Arduino
 - 9V battery connect to Arduino
 
+#Video On youtube: The Beat Box
+https://www.youtube.com/watch?v=KDY_VmAbNpA
