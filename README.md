@@ -13,6 +13,8 @@ I think my project should be slow interaction.The concept of my project basicall
 - arduino kit
 - mini breadboard
 - wires
+- Plastic box
+- 3d printing component
 
 #Circuit
 Please See Fritzing Diagram in my PDF
